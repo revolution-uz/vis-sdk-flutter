@@ -181,6 +181,7 @@ public final class VisSdkPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
         case .timeout: return ["status": "timeout"]
         case .cancelled: return ["status": "cancelled"]
         case .failed(let error): return ["status": "failed"].merging(encode(error)) { $1 }
+        @unknown default: return ["status": "failed", "error": "internal", "detail": "unknown result"]
         }
     }
 
@@ -203,6 +204,7 @@ public final class VisSdkPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
         case .networkUnavailable: return ["error": "network_unavailable"]
         case .permissionDenied: return ["error": "permission_denied"]
         case .internalError(let detail): return ["error": "internal", "detail": detail]
+        @unknown default: return ["error": "internal", "detail": "unknown error"]
         }
     }
 
@@ -229,6 +231,8 @@ public final class VisSdkPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
         case .livenessHelpClosed(let method, let timeOpenMs, let attempt, let turnSide):
             return withSide(["type": "liveness_help_closed", "method": method.rawValue,
                              "timeOpenMs": timeOpenMs, "attempt": attempt], turnSide)
+        @unknown default:
+            return ["type": "unknown"]
         }
     }
 
