@@ -36,20 +36,8 @@ dependencies:
 
 ### Android
 
-The native SDK is published on JitPack; the plugin adds that repository to
-your Android build automatically. Only if your `settings.gradle.kts` sets
-`repositoriesMode` to `FAIL_ON_PROJECT_REPOS` or `PREFER_SETTINGS`, add it
-there yourself:
-
-```kotlin
-dependencyResolutionManagement {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url = uri("https://jitpack.io") }
-    }
-}
-```
+The native SDK, `uz.vis:vis-sdk-android`, comes from Maven Central, which
+Flutter projects already include; no repository setup is needed.
 
 Set `minSdk = 26` in `android/app/build.gradle.kts`.
 

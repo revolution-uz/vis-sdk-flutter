@@ -18,17 +18,14 @@ buildscript {
     }
 }
 
-// The native Vis Android SDK is published on JitPack. Add the repository to
-// the whole build so host apps need no manual step. (Builds that forbid
-// project repositories must add it in settings.gradle.kts themselves.)
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url = uri("https://jitpack.io") }
-        // Optional local repository for internal testing before a release:
-        // `visSdkMavenRepo=/abs/path` in the app's android/gradle.properties.
-        (rootProject.findProperty("visSdkMavenRepo") as String?)?.let { maven { url = uri(it) } }
+// The native SDK (uz.vis:vis-sdk-android) is on Maven Central, which Flutter
+// apps already list. For internal testing before a release, point the build at
+// a local repository: `visSdkMavenRepo=/abs/path` in android/gradle.properties.
+(rootProject.findProperty("visSdkMavenRepo") as String?)?.let { localRepo ->
+    rootProject.allprojects {
+        repositories {
+            maven { url = uri(localRepo) }
+        }
     }
 }
 
@@ -65,5 +62,5 @@ kotlin {
 }
 
 dependencies {
-    implementation("com.github.revolution-uz:vis-sdk-android:$visSdkAndroidVersion")
+    implementation("uz.vis:vis-sdk-android:$visSdkAndroidVersion")
 }
