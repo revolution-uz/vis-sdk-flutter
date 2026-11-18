@@ -4,6 +4,10 @@ All notable changes to the Vis Flutter plugin. This project follows
 Semantic Versioning; the plugin version matches the native SDK version it
 wraps.
 
+## [1.0.1] — 2026-11-18
+
+- Documentation wording.
+
 ## [1.0.0] — 2026-11-18
 
 First public release.

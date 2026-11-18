@@ -54,9 +54,18 @@ final class VerifyFailed extends VerifyResult {
 
 /// Why the user was rejected.
 enum RejectReason {
+  /// The live check did not pass (head turn, video, more than one face).
   livenessFailed('liveness_failed'),
+
+  /// The face did not match the face on the document.
   faceMismatch('face_mismatch'),
+
+  /// The document was not accepted (unreadable, expired, not a valid card,
+  /// or not the person's card).
   invalidDocument('invalid_document'),
+
+  /// The typed document number or birth date does not match the document.
+  /// Ask the user to type it again.
   documentDataMismatch('document_data_mismatch'),
 
   /// A category this plugin version does not know yet.
