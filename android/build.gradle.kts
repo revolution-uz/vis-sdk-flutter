@@ -1,9 +1,9 @@
 group = "uz.vis.sdk.flutter"
-version = "1.0.1"
+version = "1.0.2"
 
 // Native SDK version this plugin is built and tested against.
 val visSdkAndroidVersion: String =
-    (rootProject.findProperty("visSdkAndroidVersion") as String?) ?: "1.0.1"
+    (rootProject.findProperty("visSdkAndroidVersion") as String?) ?: "1.0.2"
 
 buildscript {
     val kotlinVersion = "2.3.20"
@@ -50,8 +50,8 @@ android {
     }
 
     defaultConfig {
-        // The native SDK requires Android 8.0.
-        minSdk = 26
+        // The native SDK requires Android 7.0.
+        minSdk = 24
     }
 }
 
