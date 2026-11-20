@@ -10,6 +10,7 @@ same as in native apps:
 
 | Plugin | Native SDKs | Android | iOS | Flutter |
 |---|---|---|---|---|
+| 1.0.3 | 1.0.3 | 7.0+ (API 24) | 15.0+ | 3.32+ |
 | 1.0.2 | 1.0.2 | 7.0+ (API 24) | 15.0+ | 3.32+ |
 | 1.0.1 | 1.0.1 | 8.0+ (API 26) | 15.0+ | 3.32+ |
 | 1.0.0 | 1.0.0 | 8.0+ (API 26) | 15.0+ | 3.32+ |
@@ -33,7 +34,7 @@ mid-flow, create a new attempt.
 
 ```yaml
 dependencies:
-  vis_sdk: ^1.0.2
+  vis_sdk: ^1.0.3
 ```
 
 ### Android
