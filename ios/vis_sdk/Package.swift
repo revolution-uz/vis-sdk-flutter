@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         .package(name: "FlutterFramework", path: "../FlutterFramework"),
         // The native Vis iOS SDK this plugin is built and tested against.
-        .package(url: "https://github.com/revolution-uz/vis-sdk-ios", exact: "1.0.2"),
+        .package(url: "https://github.com/revolution-uz/vis-sdk-ios", exact: "1.0.3"),
     ],
     targets: [
         .target(
