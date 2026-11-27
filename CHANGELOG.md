@@ -4,6 +4,10 @@ All notable changes to the Vis Flutter plugin. This project follows
 Semantic Versioning; the plugin version matches the native SDK version it
 wraps.
 
+## [1.0.4] — 2026-11-27
+
+- Wraps vis-sdk-android 1.0.4 and VisSDK (iOS) 1.0.4: improved session cancellation. No API changes.
+
 ## [1.0.3] — 2026-11-20
 
 - Wraps vis-sdk-android 1.0.3 and VisSDK (iOS) 1.0.3: the selfie clip is centred on the on-screen circle on every device, fewer "frame gap" failures on slow phones (a clip with a gap is recorded again), and smaller clips (iPhone ~16 MB → ~3 MB, Android ~2.5–3 MB). No API changes.
